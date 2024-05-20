@@ -1,0 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int numberOfArrays, query;
+    cin >> numberOfArrays >> query;
+    int** arrays = new int* [numberOfArrays];
+    for (int i = 0; i < numberOfArrays; i++)
+    {
+        int numberOfElements;
+        cin >> numberOfElements;
+        arrays[i] = new int [numberOfElements];
+        for (int j = 0; j < numberOfElements; j++)
+            cin >> arrays[i][j];
+    }
+    for (int k = 0; k < query; k++)
+    {
+        int i, j;
+        cin >> i >> j;
+        cout << arrays[i][j] << endl;
+    }
+    for (int i = 0; i < numberOfArrays; i++)
+    {
+        delete[] arrays[i];
+    }
+    delete[] arrays;
+    return 0;
+}
