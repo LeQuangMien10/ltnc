@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n, k;
+    string str;
+    cin >> n >> str >> k;
+    k = k % 26;
+    
+    for (int i = 0; i < n; i++)
+    {
+        if ((str[i] >= 'a' and str[i] <= 'z') or (str[i] >= 'A' and str[i] <= 'Z'))
+        {
+            
+            if((str[i] <= 'Z' and str[i] + k > 'Z') or (int)str[i] + k > 122)
+            {
+                str[i] -= 26;
+            }
+            str[i] += k;
+        }
+    }
+    cout << str;
+}
