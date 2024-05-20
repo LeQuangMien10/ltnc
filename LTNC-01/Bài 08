@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool check(int n, int a[])
+{
+    int sumL = a[0], sumR = a[n - 1], left = 1, right = n - 2;
+    while (right - left > 0)
+    {
+        if (sumR == sumL)
+        {
+            sumL += a[left];
+            sumR += a[right];
+            left++;
+            right--;
+        }
+        while (sumL < sumR)
+        {
+            sumL += a[left];
+            left++;
+        }
+        while (sumR < sumL)
+        {
+            sumR += a[right];
+            right--;
+        }
+    }
+    if (sumR == sumL) return true;
+    else return false;
+}
+
+int main()
+{
+    int m;
+    cin >> m;
+    for (int i = 0; i < m; i++)
+    {
+        int n;
+        cin >> n;
+        int a[n];
+        for (int j = 0; j < n; j++) cin >> a[j];
+        if (check(n, a)) cout << "YES" << endl;
+        else cout << "NO" << endl;
+    }
+    return 0;
+}
