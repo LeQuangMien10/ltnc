@@ -1,0 +1,38 @@
+
+
+using namespace std;
+
+class Box
+{
+public:
+    Box() : length(0), breadth(0), height(0) {}
+    Box(int length_, int breadth_, int height_) : length(length_), breadth(breadth_), height(height_) {}
+    Box(const Box& other) : length(other.length), breadth(other.breadth), height(other.height) {}
+    
+    int getLength() const {return length;}
+    int getBreadth() const {return breadth;}
+    int getHeight() const {return height;}
+    long long CalculateVolume() const {
+        return (long long)length * breadth * height;
+    }
+    
+    friend bool operator < ( Box&A,Box& B){
+            if( (A.length < B.length) || ((A.breadth < B.breadth) && (A.length == B.length)) || ((A.height < B.height) && (A.breadth == B.breadth) && (A.length == B.length)) ){
+                return true;
+            }
+            else{
+                return false;
+            }
+        };
+
+    friend ostream& operator<<(ostream& os, const Box& box)
+    {
+        os << box.length << ' ' << box.breadth << ' ' << box.height;
+        return os;
+    }
+
+private:
+    int length, breadth, height;
+};
+
+
