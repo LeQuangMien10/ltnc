@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+    int a[t];
+    for (int i = 0; i < t; i++)
+    {
+        int n, count = 0;
+        cin >> n;
+        int a = n;
+        while (a > 0)
+        {
+            int digit = a % 10;
+            a /= 10;
+            if (digit != 0 and n % digit == 0) count++;
+        }
+        cout << count << endl;
+    }
+    return 0;
+}
