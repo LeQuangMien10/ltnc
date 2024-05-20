@@ -1,9 +1,0 @@
-﻿  BaseObject.cpp
-  Common_Function.cpp
-  TextObject.cpp
-  main.cpp
-D:\C++\GuessIt_with_SDL\main.cpp(35,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\C++\GuessIt_with_SDL\main.cpp(175,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
-D:\C++\GuessIt_with_SDL\main.cpp(234,1): warning C4715: 'playGuessIt': not all control paths return a value
-  GuessIt_with_SDL.vcxproj -> D:\C++\GuessIt_with_SDL\x64\Debug\GuessIt_with_SDL.exe
